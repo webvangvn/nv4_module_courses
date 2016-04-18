@@ -32,7 +32,7 @@
 					</tr>
 					<tr>
 						<th class="text-right">{LANG.alias}: </th>
-						<td><input class="form-control w500 pull-left" name="alias" type="text" value="{alias}" maxlength="250" id="idalias"/> &nbsp;<em class="fa fa-refresh fa-lg fa-pointer text-middle" onclick="get_alias('sciencecat', {catid});">&nbsp;</em></td>
+						<td><input class="form-control w500 pull-left" name="alias" type="text" value="{alias}" maxlength="250" id="idalias"/> &nbsp;<em class="fa fa-refresh fa-lg fa-pointer text-middle" onclick="get_alias('subjectcat', {catid});">&nbsp;</em></td>
 					</tr>
 					<tr>
 						<th class="text-right">{LANG.titlesite}: </th>
@@ -84,17 +84,7 @@
 							<!-- END: viewdescription -->
 						</td>
 					</tr>
-					<tr>
-						<th> {LANG.subject} </th>
-						<td>
-						<select id="subjectcat" name="subjectcat[]" class="form-control" style="width: 100%" multiple="multiple">
-							<!-- BEGIN: subject_loop -->
-								<option value="{subjectcat_listsub.value}" {subjectcat_listsub.selected}>{subjectcat_listsub.title}</option>
-							<!-- END: subject_loop -->
-						</select></td>
-					</tr>
 					<!-- BEGIN: featured -->
-					
 					<tr>
 						<th class="text-right">{LANG.featured}: </th>
 						<td>
@@ -121,7 +111,6 @@ var CFG = [];
 CFG.upload_current = '{UPLOAD_CURRENT}';
 CFG.upload_path = '{UPLOAD_PATH}';
 $(document).ready(function() {
-	$("#subjectcat").select2();
 	$("#parentid").select2();
 	$("#titlelength").html($("#idtitle").val().length);
 	$("#idtitle").bind("keyup paste", function() {
@@ -139,7 +128,7 @@ $(document).ready(function() {
 	});
 	<!-- BEGIN: getalias -->
 	$("#idtitle").change(function() {
-		get_alias("sciencecat", 0);
+		get_alias("subjectcat", 0);
 	});
 	<!-- END: getalias -->
 });

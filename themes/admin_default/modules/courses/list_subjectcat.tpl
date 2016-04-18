@@ -25,7 +25,7 @@
 				{STT}
 				<!-- END: stt -->
 				<!-- BEGIN: weight -->
-				<select class="form-control" id="id_weight_{ROW.catid}" onchange="nv_chang_sciencecat('{ROW.catid}','weight');">
+				<select class="form-control" id="id_weight_{ROW.catid}" onchange="nv_chang_subjectcat('{ROW.catid}','weight');">
 					<!-- BEGIN: loop -->
 					<option value="{WEIGHT.key}"{WEIGHT.selected}>{WEIGHT.title}</option>
 					<!-- END: loop -->
@@ -33,11 +33,7 @@
 				<!-- END: weight -->
 				</td>
 				<td><strong>{ROW.title}</strong>
-				<!-- BEGIN: numsubcat -->
-				<span class="red">({NUMSUBCAT})</span>
-				<!-- END: numsubcat -->
 				</td>
-
 				<td class="text-center">{ROW.adminfuncs}</td>
 			</tr>
 			<!-- END: loop -->

@@ -17,7 +17,7 @@ if (! defined('NV_IS_AJAX')) {
 
 $parentid = $nv_Request->get_int('parentid', 'get', 0);
 
-$contents = nv_show_sciencecat_list($parentid);
+$contents = nv_show_subjectcat_list($parentid);
 
 include NV_ROOTDIR . '/includes/header.php';
 echo $contents;

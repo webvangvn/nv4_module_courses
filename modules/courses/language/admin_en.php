@@ -51,3 +51,94 @@ $lang_module['add_student'] = 'add_student';
 $lang_module['del_student'] = 'del_student';
 $lang_module['list_student'] = 'list_student';
 $lang_module['save'] = 'Save';
+
+//Lang for function abc
+$lang_module['abc'] = 'abc';
+$lang_module['edit'] = 'edit';
+$lang_module['delete'] = 'Delete';
+$lang_module['number'] = 'Number';
+$lang_module['active'] = 'Trạng thái';
+$lang_module['userid'] = 'Userid';
+$lang_module['catid'] = 'Catid';
+$lang_module['add_content'] = 'Add content';
+$lang_module['pub_content'] = 'Pub content';
+$lang_module['edit_content'] = 'Edit content';
+$lang_module['del_content'] = 'Del content';
+$lang_module['app_content'] = 'App content';
+$lang_module['idsite'] = 'Idsite';
+
+//Lang for function courses
+$lang_module['courses'] = 'courses';
+$lang_module['id_courses'] = 'Id courses';
+$lang_module['alias'] = 'Alias';
+$lang_module['name_courses'] = 'Name Class';
+$lang_module['schedule'] = 'Schedule';
+$lang_module['duration'] = 'Duration';
+$lang_module['fee'] = 'Fee';
+$lang_module['total'] = 'Total';
+$lang_module['time_start'] = 'Time start';
+$lang_module['time_end'] = 'Time end';
+$lang_module['note'] = 'Note';
+$lang_module['error_required_id_courses'] = 'Error: Required fields enter the Id courses';
+$lang_module['error_required_alias'] = 'Error: Required fields enter the Alias';
+$lang_module['error_required_name_courses'] = 'Error: Required fields enter the Name Class';
+$lang_module['error_required_schedule'] = 'Error: Required fields enter the Schedule';
+$lang_module['error_required_duration'] = 'Error: Required fields enter the Duration';
+$lang_module['error_required_fee'] = 'Error: Required fields enter the Fee';
+$lang_module['error_required_total'] = 'Error: Required fields enter the Total';
+$lang_module['error_required_time_start'] = 'Error: Required fields enter the Time start';
+$lang_module['error_required_time_end'] = 'Error: Required fields enter the Time end';
+
+//Lang for function courses
+$lang_module['error_required_sciencecat'] = 'Error: Required fields enter the sciencecat';
+
+//Lang for function courses
+$lang_module['search_title'] = 'Enter keywords searching';
+$lang_module['search_submit'] = 'Search';
+
+//Lang for function students
+$lang_module['students'] = 'students';
+$lang_module['fname'] = 'Fname';
+$lang_module['lname'] = 'Lname';
+$lang_module['email'] = 'Email';
+$lang_module['phone'] = 'Phone';
+$lang_module['address'] = 'Address';
+$lang_module['error_required_fname'] = 'Error: Required fields enter the Fname';
+$lang_module['error_required_lname'] = 'Error: Required fields enter the Lname';
+$lang_module['error_required_email'] = 'Error: Required fields enter the Email';
+$lang_module['error_required_phone'] = 'Error: Required fields enter the Phone';
+
+//Lang for function main
+$lang_module['cid'] = 'ID Class';
+$lang_module['sid'] = 'Name Student';
+$lang_module['tid'] = 'Nam teacher';
+$lang_module['error_required_cid'] = 'Error: Required fields enter the ID Class';
+$lang_module['error_required_sid'] = 'Error: Required fields enter the Name Student';
+$lang_module['error_required_tid'] = 'Error: Required fields enter the Nam teacher';
+
+//Lang for function class
+$lang_module['class'] = 'class';
+
+//Lang for function student
+$lang_module['id_student'] = 'Id student';
+
+//Lang for function courses
+$lang_module['teacherid'] = 'Teacherid';
+$lang_module['status'] = 'Status';
+$lang_module['inhome'] = 'Inhome';
+$lang_module['homeimgthumb'] = 'Homeimgthumb';
+$lang_module['hometext'] = 'Hometext';
+$lang_module['homeimgfile'] = 'Homeimgfile';
+$lang_module['homeimgalt'] = 'Homeimgalt';
+
+//Lang for function courses
+$lang_module['bodytext'] = 'Content Detail';
+$lang_module['error_required_teacherid'] = 'Error: Required fields enter the Teacherid';
+$lang_module['error_required_hometext'] = 'Error: Required fields enter the Hometext';
+$lang_module['error_required_bodytext'] = 'Error: Required fields enter the Content Detail';
+
+//Lang for function courses
+$lang_module['feeonline'] = 'Fee Online';
+$lang_module['feeoffline'] = 'Fee Offline';
+$lang_module['error_required_feeonline'] = 'Error: Required fields enter the Fee Online';
+$lang_module['error_required_feeoffline'] = 'Error: Required fields enter the Fee Offline';

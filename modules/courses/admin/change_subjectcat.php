@@ -17,10 +17,10 @@ $mod = $nv_Request->get_string('mod', 'post', '');
 $new_vid = $nv_Request->get_int('new_vid', 'post', 0);
 $content = 'NO_' . $catid;
 
-list($catid, $parentid, $numsubcat) = $db->query('SELECT catid, parentid, numsubcat FROM ' . NV_PREFIXLANG . '_' . $module_data . '_sciencecat WHERE catid=' . $catid)->fetch(3);
+list($catid, $parentid, $numsubcat) = $db->query('SELECT catid, parentid, numsubcat FROM ' . NV_PREFIXLANG . '_' . $module_data . '_subjectcat WHERE catid=' . $catid)->fetch(3);
 if ($catid > 0) {
-    if ($mod == 'weight' and $new_vid > 0 and (defined('NV_IS_ADMIN_MODULE') or ($parentid > 0 and isset($array_sciencecat_admin[$admin_id][$parentid]) and $array_sciencecat_admin[$admin_id][$parentid]['admin'] == 1))) {
-        $sql = 'SELECT catid FROM ' . NV_PREFIXLANG . '_' . $module_data . '_sciencecat WHERE catid!=' . $catid . ' AND parentid=' . $parentid . ' ORDER BY weight ASC';
+    if ($mod == 'weight' and $new_vid > 0 and (defined('NV_IS_ADMIN_MODULE') or ($parentid > 0 and isset($array_subjectcat_admin[$admin_id][$parentid]) and $array_subjectcat_admin[$admin_id][$parentid]['admin'] == 1))) {
+        $sql = 'SELECT catid FROM ' . NV_PREFIXLANG . '_' . $module_data . '_subjectcat WHERE catid!=' . $catid . ' AND parentid=' . $parentid . ' ORDER BY weight ASC';
         $result = $db->query($sql);
 
         $weight = 0;
@@ -29,26 +29,26 @@ if ($catid > 0) {
             if ($weight == $new_vid) {
                 ++$weight;
             }
-            $sql = 'UPDATE ' . NV_PREFIXLANG . '_' . $module_data . '_sciencecat SET weight=' . $weight . ' WHERE catid=' . $row['catid'];
+            $sql = 'UPDATE ' . NV_PREFIXLANG . '_' . $module_data . '_subjectcat SET weight=' . $weight . ' WHERE catid=' . $row['catid'];
             $db->query($sql);
         }
 
-        $sql = 'UPDATE ' . NV_PREFIXLANG . '_' . $module_data . '_sciencecat SET weight=' . $new_vid . ' WHERE catid=' . $catid ;
+        $sql = 'UPDATE ' . NV_PREFIXLANG . '_' . $module_data . '_subjectcat SET weight=' . $new_vid . ' WHERE catid=' . $catid ;
         $db->query($sql);
 
-        nv_fix_sciencecat_order();
+        nv_fix_subjectcat_order();
         $content = 'OK_' . $parentid;
-    } elseif (defined('NV_IS_ADMIN_MODULE') or (isset($array_sciencecat_admin[$admin_id][$catid]) and $array_sciencecat_admin[$admin_id][$catid]['add_content'] == 1)) {
+    } elseif (defined('NV_IS_ADMIN_MODULE') or (isset($array_subjectcat_admin[$admin_id][$catid]) and $array_subjectcat_admin[$admin_id][$catid]['add_content'] == 1)) {
         if ($mod == 'inhome' and ($new_vid == 0 or $new_vid == 1)) {
-            $sql = 'UPDATE ' . NV_PREFIXLANG . '_' . $module_data . '_sciencecat SET inhome=' . $new_vid . ' WHERE catid=' . $catid ;
+            $sql = 'UPDATE ' . NV_PREFIXLANG . '_' . $module_data . '_subjectcat SET inhome=' . $new_vid . ' WHERE catid=' . $catid ;
             $db->query($sql);
             $content = 'OK_' . $parentid;
         } elseif ($mod == 'numlinks' and $new_vid >= 0 and $new_vid <= 20) {
-            $sql = 'UPDATE ' . NV_PREFIXLANG . '_' . $module_data . '_sciencecat SET numlinks=' . $new_vid . ' WHERE catid=' . $catid ;
+            $sql = 'UPDATE ' . NV_PREFIXLANG . '_' . $module_data . '_subjectcat SET numlinks=' . $new_vid . ' WHERE catid=' . $catid ;
             $db->query($sql);
             $content = 'OK_' . $parentid;
         } elseif ($mod == 'newday' and $new_vid >= 0 and $new_vid <= 10) {
-            $sql = 'UPDATE ' . NV_PREFIXLANG . '_' . $module_data . '_sciencecat SET newday=' . $new_vid . ' WHERE catid=' . $catid ;
+            $sql = 'UPDATE ' . NV_PREFIXLANG . '_' . $module_data . '_subjectcat SET newday=' . $new_vid . ' WHERE catid=' . $catid ;
             $db->query($sql);
             $content = 'OK_' . $parentid;
         } elseif ($mod == 'viewcat' and $nv_Request->isset_request('new_vid', 'post')) {
@@ -57,7 +57,7 @@ if ($catid > 0) {
             if (! array_key_exists($viewcat, $array_viewcat)) {
                 $viewcat = 'viewcat_page_new';
             }
-            $stmt = $db->prepare('UPDATE ' . NV_PREFIXLANG . '_' . $module_data . '_sciencecat SET viewcat= :viewcat WHERE catid=' . $catid);
+            $stmt = $db->prepare('UPDATE ' . NV_PREFIXLANG . '_' . $module_data . '_subjectcat SET viewcat= :viewcat WHERE catid=' . $catid);
             $stmt->bindParam(':viewcat', $viewcat, PDO::PARAM_STR);
             $stmt->execute();
             $content = 'OK_' . $parentid;

@@ -25,18 +25,17 @@
 			<thead>
 				<tr>
 					<th class="w100">{LANG.number}</th>
-					<th>{LANG.id_student}</th>
-					<th>{LANG.fname}</th>
-					<th>{LANG.lname}</th>
-					<th>{LANG.email}</th>
-					<th>{LANG.phone}</th>
+					<th>{LANG.cid}</th>
+					<th>{LANG.name_courses}</th>
+					<th>{LANG.sid}</th>
+					<th>{LANG.tid}</th>
 					<th class="w150">&nbsp;</th>
 				</tr>
 			</thead>
 			<!-- BEGIN: generate_page -->
 			<tfoot>
 				<tr>
-					<td class="text-center" colspan="7">{NV_GENERATE_PAGE}</td>
+					<td class="text-center" colspan="5">{NV_GENERATE_PAGE}</td>
 				</tr>
 			</tfoot>
 			<!-- END: generate_page -->
@@ -44,11 +43,10 @@
 				<!-- BEGIN: loop -->
 				<tr>
 					<td> {VIEW.number} </td>
-					<td> {VIEW.id_student} </td>
-					<td> {VIEW.fname} </td>
-					<td> {VIEW.lname} </td>
-					<td> {VIEW.email} </td>
-					<td> {VIEW.phone} </td>
+					<td> {VIEW.cid} </td>
+					<td> {VIEW.ctitle} </td>
+					<td> {VIEW.sid} </td>
+					<td> {VIEW.tid} </td>
 					<td class="text-center"><i class="fa fa-edit fa-lg">&nbsp;</i> <a href="{VIEW.link_edit}#edit">{LANG.edit}</a> - <em class="fa fa-trash-o fa-lg">&nbsp;</em> <a href="{VIEW.link_delete}" onclick="return confirm(nv_is_del_confirm[0]);">{LANG.delete}</a></td>
 				</tr>
 				<!-- END: loop -->
@@ -66,45 +64,36 @@
 <form class="form-horizontal" action="{NV_BASE_ADMINURL}index.php?{NV_LANG_VARIABLE}={NV_LANG_DATA}&amp;{NV_NAME_VARIABLE}={MODULE_NAME}&amp;{NV_OP_VARIABLE}={OP}" method="post">
 	<input type="hidden" name="id" value="{ROW.id}" />
 	<div class="form-group">
-		<label class="col-sm-5 col-md-4 control-label"><strong>{LANG.id_student}</strong></label>
+		<label class="col-sm-5 col-md-4 control-label"><strong>{LANG.cid}</strong> <span class="red">(*)</span></label>
 		<div class="col-sm-19 col-md-20">
-			<input class="form-control" type="text" name="id_student" value="{ROW.id_student}" />
+			<select class="form-control" name="cid">
+				<option value=""> --- </option>
+				<!-- BEGIN: select_cid -->
+				<option value="{OPTION.key}" {OPTION.selected}>{OPTION.title}</option>
+				<!-- END: select_cid -->
+			</select>
 		</div>
 	</div>
 	<div class="form-group">
-		<label class="col-sm-5 col-md-4 control-label"><strong>{LANG.fname}</strong> <span class="red">(*)</span></label>
+		<label class="col-sm-5 col-md-4 control-label"><strong>{LANG.sid}</strong> <span class="red">(*)</span></label>
 		<div class="col-sm-19 col-md-20">
-			<input class="form-control" type="text" name="fname" value="{ROW.fname}" required="required" oninvalid="setCustomValidity( nv_required )" oninput="setCustomValidity('')" />
+			<select class="form-control" name="sid">
+				<option value=""> --- </option>
+				<!-- BEGIN: select_sid -->
+				<option value="{OPTION.key}" {OPTION.selected}>{OPTION.title}</option>
+				<!-- END: select_sid -->
+			</select>
 		</div>
 	</div>
 	<div class="form-group">
-		<label class="col-sm-5 col-md-4 control-label"><strong>{LANG.lname}</strong> <span class="red">(*)</span></label>
+		<label class="col-sm-5 col-md-4 control-label"><strong>{LANG.tid}</strong> <span class="red">(*)</span></label>
 		<div class="col-sm-19 col-md-20">
-			<input class="form-control" type="text" name="lname" value="{ROW.lname}" required="required" oninvalid="setCustomValidity( nv_required )" oninput="setCustomValidity('')" />
-		</div>
-	</div>
-	<div class="form-group">
-		<label class="col-sm-5 col-md-4 control-label"><strong>{LANG.email}</strong> <span class="red">(*)</span></label>
-		<div class="col-sm-19 col-md-20">
-			<input class="form-control" type="text" name="email" value="{ROW.email}" required="required" oninvalid="setCustomValidity( nv_required )" oninput="setCustomValidity('')" />
-		</div>
-	</div>
-	<div class="form-group">
-		<label class="col-sm-5 col-md-4 control-label"><strong>{LANG.phone}</strong> <span class="red">(*)</span></label>
-		<div class="col-sm-19 col-md-20">
-			<input class="form-control" type="text" name="phone" value="{ROW.phone}" required="required" oninvalid="setCustomValidity( nv_required )" oninput="setCustomValidity('')" />
-		</div>
-	</div>
-	<div class="form-group">
-		<label class="col-sm-5 col-md-4 control-label"><strong>{LANG.address}</strong></label>
-		<div class="col-sm-19 col-md-20">
-			<input class="form-control" type="text" name="address" value="{ROW.address}" />
-		</div>
-	</div>
-	<div class="form-group">
-		<label class="col-sm-5 col-md-4 control-label"><strong>{LANG.note}</strong></label>
-		<div class="col-sm-19 col-md-20">
-			<input class="form-control" type="text" name="note" value="{ROW.note}" />
+			<select class="form-control" name="tid">
+				<option value=""> --- </option>
+				<!-- BEGIN: select_tid -->
+				<option value="{OPTION.key}" {OPTION.selected}>{OPTION.title}</option>
+				<!-- END: select_tid -->
+			</select>
 		</div>
 	</div>
 	<div class="form-group" style="text-align: center"><input class="btn btn-primary" name="submit" type="submit" value="{LANG.save}" /></div>

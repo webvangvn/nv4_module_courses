@@ -24,49 +24,29 @@
 		<table class="table table-striped table-bordered table-hover">
 			<thead>
 				<tr>
-					<th class="w100">{LANG.publtime}</th>
-					<th>{LANG.id_courses}</th>
-					<th>{LANG.sciencecat}</th>
-					<th>{LANG.teacherid}</th>
-					<th>{LANG.name_courses}</th>
-					<th>{LANG.feeonline}</th>
-					<th>{LANG.feeoffline}</th>
-					<th>{LANG.total}</th>
-					<th>{LANG.time_start}</th>
-					<th>{LANG.time_end}</th>
-					<th>{LANG.status}</th>
-					<th class="w100 text-center">{LANG.active}</th>
+					<th class="w100">{LANG.number}</th>
+					<th>{LANG.alias}</th>
+					<th>{LANG.fname}</th>
+					<th>{LANG.lname}</th>
+					<th>{LANG.email}</th>
 					<th class="w150">&nbsp;</th>
 				</tr>
 			</thead>
 			<!-- BEGIN: generate_page -->
 			<tfoot>
 				<tr>
-					<td class="text-center" colspan="13">{NV_GENERATE_PAGE}</td>
+					<td class="text-center" colspan="6">{NV_GENERATE_PAGE}</td>
 				</tr>
 			</tfoot>
 			<!-- END: generate_page -->
 			<tbody>
 				<!-- BEGIN: loop -->
 				<tr>
-					<td>
-						<select class="form-control" id="id_weight_{VIEW.id}" onchange="nv_change_weight('{VIEW.id}');">
-						<!-- BEGIN: publtime_loop -->
-							<option value="{WEIGHT.key}"{WEIGHT.selected}>{WEIGHT.title}</option>
-						<!-- END: publtime_loop -->
-					</select>
-				</td>
-					<td> {VIEW.id_courses} </td>
-					<td> {VIEW.sciencecat} </td>
-					<td> {VIEW.teacherid} </td>
-					<td> {VIEW.name_courses} </td>
-					<td> {VIEW.feeonline} </td>
-					<td> {VIEW.feeoffline} </td>
-					<td> {VIEW.total} </td>
-					<td> {VIEW.time_start} </td>
-					<td> {VIEW.time_end} </td>
-					<td> {VIEW.status} </td>
-					<td class="text-center"><input type="checkbox" name="status" id="change_status_{VIEW.id}" value="{VIEW.id}" {CHECK} onclick="nv_change_status({VIEW.id});" /></td>
+					<td> {VIEW.number} </td>
+					<td> {VIEW.alias} </td>
+					<td> {VIEW.fname} </td>
+					<td> {VIEW.lname} </td>
+					<td> {VIEW.email} </td>
 					<td class="text-center"><i class="fa fa-edit fa-lg">&nbsp;</i> <a href="{VIEW.link_edit}#edit">{LANG.edit}</a> - <em class="fa fa-trash-o fa-lg">&nbsp;</em> <a href="{VIEW.link_delete}" onclick="return confirm(nv_is_del_confirm[0]);">{LANG.delete}</a></td>
 				</tr>
 				<!-- END: loop -->
